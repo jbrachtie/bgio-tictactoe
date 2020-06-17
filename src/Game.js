@@ -1,5 +1,6 @@
 import { INVALID_MOVE } from 'boardgame.io/core';
 
+// https://boardgame.io/documentation/#/api/Game?id=game
 export const TicTacToe = {
   // set initial value of game state `G`: (setup is built in fn)
   setup: (ctx) => ({ // setup receives `ctx` as first arg (unused here)
@@ -40,6 +41,18 @@ export const TicTacToe = {
       return ({
         draw: true
       });
+    }
+  },
+
+  ai: {
+    enumerate: (G, ctx) => {
+      let moves = [];
+      for(let i = 0; i < 9; i++) {
+        if(G.cells[i] === null) {
+          moves.push({ move: 'clickCell', args: [i] })
+        }
+      }
+      return moves;
     }
   }
 }

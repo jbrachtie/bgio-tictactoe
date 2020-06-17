@@ -4,6 +4,7 @@ import TicTacToeBoard from './Board';
 
 // data from whatever is set as "game" will be set as props
 // for whichever component is set as "board"
+// https://boardgame.io/documentation/#/api/Client?id=board-props
 const App = Client({
   game: TicTacToe,
   board: TicTacToeBoard
